@@ -1,0 +1,43 @@
+.footer {
+    background-color: #022640;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contact,
+.links,
+.social-media {
+    margin-bottom: 30px;
+}
+
+.contact h3,
+.links h3,
+.social-media h3 {
+    margin-bottom: 10px;
+}
+
+.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links ul li {
+    margin-bottom: 5px;
+}
+.links ul li a{
+    text-decoration:none;
+    color:#fff;
+    font-size:1.5rem;
+    
+}
+
+.social-icons img {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+}
+
+.footer-text p {
+    margin: 0;
+}

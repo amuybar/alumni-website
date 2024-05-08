@@ -7,7 +7,8 @@ import '../styles/NavBar.css';
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
-
+    
+ 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -24,14 +25,14 @@ const NavBar = () => {
             </div>
             <ul className={`nav-links ${isOpen ? "active" : ""}`}>
                 <li><input type="text" placeholder="Search" className="search-bar" /></li>
-                <li><NavLink to="/"><AiOutlineHome /> Home</NavLink></li>
+                <li><NavLink to="/"onClick={toggleMenu}><AiOutlineHome /> Home</NavLink></li>
                 <li><NavLink to="/sacco" onClick={toggleMenu}><AiOutlineUser /> Sacco</NavLink></li>
                 <li><NavLink to="/opportunity" onClick={toggleMenu}><AiOutlineBell /> Opportunity</NavLink></li>
                 <li><NavLink to="/impact" onClick={toggleMenu}><AiOutlineCalendar /> Impact</NavLink></li>
                 <li><NavLink to="/news" onClick={toggleMenu}><AiOutlineMessage /> News</NavLink></li>
                 <li><NavLink to="/events" onClick={toggleMenu}><AiOutlineCalendar /> Events</NavLink></li>
                 <li><NavLink to="/get-involved" onClick={toggleMenu}><AiOutlineQuestionCircle /> Get Involved</NavLink></li>
-                <li><NavLink to="/contact" onClick={toggleMenu}><AiOutlinePhone /> Contact</NavLink></li>
+                <li><NavLink to="/directory" onClick={toggleMenu}><AiOutlinePhone /> Alumni Directory</NavLink></li>
                 <li><NavLink to="/profile" onClick={toggleMenu}><AiOutlineProfile /> Profile</NavLink></li>
                
             </ul>

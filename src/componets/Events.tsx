@@ -1,7 +1,9 @@
 import React from 'react';
 import '../styles/EventSection.css';
+import { useNavigate } from 'react-router-dom';
 
 const EventSection = () => {
+    const navigate=useNavigate();
     return (
         <div className="event-section">
             <div className="event">
@@ -18,7 +20,8 @@ const EventSection = () => {
                     </div>
                 </div>
             </div>
-            <button className="view-events-btn">View All Events</button>
+            <button onClick={()=>navigate('/events')}
+            className="view-events-btn">View All Events</button>
         </div>
     );
 };

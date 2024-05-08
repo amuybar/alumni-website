@@ -1,13 +1,27 @@
-## Running React on Replit
+# Stamss Alumni and Sacco Website
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+Welcome to the Stamss Alumni and Sacco website. This is a platform for all Stamss alumni to connect, collaborate and support each other.
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+## Table of Contents
 
-Using the two in conjunction is one of the fastest ways to build a web app.
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [License](#license)
 
-### Getting Started
-- Hit run
-- Edit [App.tsx](#src/App.tsx) and watch it live update!
+## Installation
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)# alumni-website
+To install the website, follow these steps:
+
+1. Clone the repository:
+2. Navigate to the repository:
+3. Install the dependencies:
+
+## Usage
+
+To use the website, follow these steps:
+
+1. Start the server:
+
+2. Open your browser and navigate to:
+

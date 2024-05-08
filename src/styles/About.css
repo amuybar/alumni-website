@@ -1,0 +1,45 @@
+/* About Page CSS */
+
+.about-page {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3 {
+  color: #003366; /* Dark blue */
+}
+
+.about-page p {
+  line-height: 1.5;
+}
+
+.about-page li {
+  margin-bottom: 10px;
+}
+
+.about-page a {
+  color: #60acf8; 
+  text-decoration: none;
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+.about-page a:hover {
+  text-decoration: underline;
+  color: #3998f7; 
+  font-size: 1.6rem;
+}
+
+.about-page ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+.about-page ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}

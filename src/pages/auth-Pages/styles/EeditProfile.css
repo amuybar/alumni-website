@@ -1,0 +1,88 @@
+
+.edit-profile-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.edit-profile-form input[type="text"],
+.edit-profile-form input[type="email"],
+.edit-profile-form input[type="tel"] {
+  width: 96%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.edit-profile-form input[type="text"]:focus,
+.edit-profile-form input[type="email"]:focus,
+.edit-profile-form input[type="tel"]:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile-form button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-profile-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Error Message Styles */
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+
+/* Small screens (portrait phones, less than 480px) */
+@media (max-width: 479px) {
+.edit-profile-form {
+    margin: 20px auto;
+    padding: 15px;
+  }
+}
+
+/* Medium screens (landscape phones, 480px and up) */
+@media (min-width: 480px) and (max-width: 767px) {
+.edit-profile-form {
+    margin: 30px auto;
+    padding: 20px;
+  }
+}
+
+/* Large screens (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+.edit-profile-form {
+    margin: 40px auto;
+    padding: 25px;
+  }
+}
+
+/* Extra large screens (desktops, 992px and up) */
+@media (min-width: 992px) {
+.edit-profile-form {
+    margin: 50px auto;
+    padding: 30px;
+  }
+}

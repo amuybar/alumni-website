@@ -20,9 +20,9 @@ const SaccoPage = () => {
     <div className='dashboard'> 
     <h2>Dashboard</h2>
      <button onClick={() => history('/join-sacco')}>Join Sacco</button>
-      <button onClick={() => history('/transactions')}>Manage Transactions</button>
-      <button onClick={() => history('/welfare')}>Welfare</button>
-      <button onClick={() => history('/sacco-dashboard')}>Sacco Dashboard</button></div>
+      <button onClick={() => history('/sacco-profile')}>Manage profile</button>
+      <button onClick={() => history('/board')}>Board Members</button>
+      <button onClick={() => history('/faq-sacco')}>Sacco FAQ</button></div>
     </div>
   );
 };

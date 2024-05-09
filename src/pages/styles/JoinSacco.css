@@ -1,0 +1,70 @@
+.join-sacco {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  min-height: 90vh;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.join-sacco h1 {
+  color: #007bff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.join-sacco p {
+  margin-bottom: 20px;
+}
+
+.join-sacco ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.join-sacco li {
+  margin-bottom: 10px;
+  color: #151a20;
+}
+.join-sacco form{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.join-sacco input[type="text"],
+.join-sacco input[type="email"],
+.join-sacco input[type="tel"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 70%;
+  margin-bottom: 10px;
+}
+
+.join-sacco button[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.join-sacco button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.join-sacco.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.join-sacco.success {
+  color: green;
+  margin-top: 10px;
+}

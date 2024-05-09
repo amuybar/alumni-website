@@ -1,0 +1,56 @@
+.board-page {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.board-page h1 {
+  color: #007bff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.board-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.board-member {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.board-member img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.board-member h2 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.board-member p {
+  margin-bottom: 20px;
+}
+
+.board-member button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.board-member button:hover {
+  background-color: #0056b3;
+}

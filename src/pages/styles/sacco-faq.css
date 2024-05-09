@@ -1,0 +1,25 @@
+.sacco-faq {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sacco-faq h1 {
+  color: #011b36;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sacco-faq.faq-item {
+  margin-bottom: 20px;
+}
+
+.sacco-faq h2 {
+  color: #101b25;
+  margin-bottom: 10px;
+}
+
+.sacco-faq p {
+  margin-bottom: 20px;
+}

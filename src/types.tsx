@@ -20,4 +20,26 @@ export interface OpportunityType {
   description: string;
 }
 
+export interface Transactions{
+  amount:number,
+    date:string,
+    type:string,
+    user:string
 
+}
+
+export interface Board{
+  name:string;
+  position:string;
+  picture:string;
+  id:string;
+}
+
+export interface News{
+  id: number;
+  heading: string;
+  summary: string;
+  content: string;
+  date: string;
+  image: string;
+}

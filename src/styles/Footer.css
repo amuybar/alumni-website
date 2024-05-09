@@ -28,7 +28,6 @@
 .links ul li a{
     text-decoration:none;
     color:#fff;
-    font-size:1.5rem;
     
 }
 
@@ -40,4 +39,9 @@
 
 .footer-text p {
     margin: 0;
+}
+.footer-text a{
+    color:#006eff;
+    font-size:1.5rem;
+    text-decoration:none;
 }

@@ -1,13 +1,25 @@
 .hero-section {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     position: relative;
     overflow: hidden;
-    background-image: url('/st.jpg');
-    background-size: cover;
-    background-position: center;
-    height:90vh;
-}
+    height: 70vh;
+    background-blend-mode: darken; 
+    animation: background-swap 40s ease-in-out infinite alternate; 
+  }
+  
+  @keyframes background-swap {
+    0% {
+      background-image: url('/s.png');
+    }
+    50% {
+      background-image: url('/image.png'); 
+    }
+    100% {
+      background-image: url('/st.jpg');
+    }
+  }
+  
 
 .hero-section::before {
     content: "";
@@ -28,4 +40,19 @@
 }
 .hero-content h1{
     font-size:3.5rem;
+    color: #fff;
+}
+.hero-content button{
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.hero-content button:hover{
+    background-color: #0069d9;
 }

@@ -14,3 +14,10 @@ export interface Event {
   location: string;
   date: string;
 }
+export interface OpportunityType {
+  [x: string]: Key | null | undefined;
+  title: string;
+  description: string;
+}
+
+

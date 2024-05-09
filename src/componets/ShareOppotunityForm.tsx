@@ -7,7 +7,7 @@ const ShareOpportunityForm = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
       // Send opportunity data to the backend

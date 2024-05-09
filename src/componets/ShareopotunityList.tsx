@@ -1,9 +1,10 @@
 // OpportunityList.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { OpportunityType } from '../types';
 
 const OpportunityList = () => {
-  const [opportunities, setOpportunities] = useState([]);
+  const [opportunities, setOpportunities] = useState<OpportunityType[]>([]);
 
   useEffect(() => {
     // Fetch opportunities from the backend upon component mount

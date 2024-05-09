@@ -17,7 +17,7 @@ const AddEventForm = () => {
 
  
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e:any) => {
     e.preventDefault();
     try {
       setIsLoading(true);
@@ -61,9 +61,10 @@ const AddEventForm = () => {
         </div>
         <div>
           <label htmlFor="description">Description:</label>
-          <MDEditor
-            value={description}
-            onChange={setDescription}
+          <textarea
+          name="description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
           />
         </div>
         <div>

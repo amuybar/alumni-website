@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'eact';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal, Key } from 'react';
 

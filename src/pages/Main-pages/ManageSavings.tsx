@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'eact';
 import axios from 'axios';
+import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal, Key } from 'react';
+
+interface UserSavings {
+  username: string;
+  savings: number;
+  savingsPattern: string;
+}
 
 const ManagingSavings = () => {
   const [totalSavings, setTotalSavings] = useState(0);
-  const [userSavings, setUserSavings] = useState([]);
+  const [userSavings, setUserSavings] = useState<UserSavings[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -34,7 +41,7 @@ const ManagingSavings = () => {
           </tr>
         </thead>
         <tbody>
-          {userSavings.map((userSavings, index) => (
+          {userSavings.map((userSavings: { username: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; savings: { toLocaleString: () => string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }; savingsPattern: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }, index: Key | null | undefined) => (
             <tr key={index}>
               <td>{userSavings.username}</td>
               <td>KES {userSavings.savings.toLocaleString()}</td>

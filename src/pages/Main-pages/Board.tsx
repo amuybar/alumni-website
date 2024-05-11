@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/BoardPage.css';
 import { Board } from '../../types';
-
-
+import { baseUrl, userEndpoints } from '../../Services/apis_endpoin';
 
 const BoardPage = () => {
   const [boardMembers, setBoardMembers] = useState<Board[]>([]);
@@ -12,8 +11,11 @@ const BoardPage = () => {
   useEffect(() => {
     const fetchBoardMembers = async () => {
       try {
-        const response = await axios.get('/api/board-members');
-        setBoardMembers(response.data.boardMembers);
+        const response = await axios.get(baseUrl + userEndpoints.getAllUsers);
+        const allUsers = response.data.users;
+        // Filter users who are admins
+        const admins = allUsers.filter((user: { isAdmin: any; }) => user.isAdmin);
+        setBoardMembers(admins);
       } catch (error) {
         if (!error) {
           setErrorMessage('Something went wrong. Please try again later.');

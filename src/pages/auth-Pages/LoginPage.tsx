@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import usenavigate hook
 import './styles/Login.css';
 import axios from 'axios';
+import { baseUrl, userEndpoints } from '../../Services/apis_endpoin';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -11,8 +12,9 @@ const LoginForm = () => {
 
   const handleSubmit = async (event:any) => {
     event.preventDefault();
+    
     try {
-      const response = await axios.post('http://localhost:3002/api/user/login', {
+      const response = await axios.post(baseUrl + userEndpoints.login, {
         email,
         password,
       });

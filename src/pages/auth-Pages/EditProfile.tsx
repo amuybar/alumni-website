@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import './styles/EeditProfile.css';
 import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
+import { baseUrl, userEndpoints } from '../../Services/apis_endpoin';
 
 
 const EditProfile = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [idno, setIdno] = useState('');
   const [error, setError] = useState('');
   const navigate=useNavigate();
 
@@ -16,11 +18,12 @@ const EditProfile = () => {
     try {
       const token = localStorage.getItem('token'); 
       const response = await axios.put(
-        'http://localhost:3002/api/user/update',
+        baseUrl + userEndpoints.updateUser,
         {
           name,
           email,
           phone,
+          idno,
         },
         {
           headers: {
@@ -32,6 +35,7 @@ const EditProfile = () => {
       setName('');
       setEmail('');
       setPhone('');
+      setIdno('');
       setError('');
       navigate('/profile')
     } catch (error) {
@@ -39,6 +43,7 @@ const EditProfile = () => {
       // Handle error
     }
   };
+  
   
 
   const handleNameChange = (event:any) => {
@@ -52,6 +57,9 @@ const EditProfile = () => {
   const handlePhoneChange = (event:any) => {
     setPhone(event.target.value);
   };
+  const handleIdnoChange=(e:any)=>{
+    setIdno(e.target.value);
+  }
 
   return (
     <form onSubmit={handleSubmit} className='edit-profile-form '>
@@ -82,6 +90,14 @@ const EditProfile = () => {
         name="phone"
         value={phone}
         onChange={handlePhoneChange}
+        required
+      />
+      <label htmlFor="idno">ID Number:</label>
+      <input
+        type="text"
+        name="idno"
+        value={idno}
+        onChange={handleIdnoChange}
         required
       />
 

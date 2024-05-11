@@ -3,6 +3,7 @@ import { User } from '../../types';
 import axios from 'axios';
 import '../../styles/Profilepage.css'
 import { useNavigate } from 'react-router-dom';
+import { baseUrl, userEndpoints } from '../../Services/apis_endpoin';
 
 const ProfilePage = () => {
   const [activities, setActivities] = useState<any[]>([]);
@@ -18,7 +19,7 @@ const ProfilePage = () => {
           throw new Error('No token found.');
         }
     
-        const response = await axios.get('http://localhost:3002/api/user/profile', {
+        const response = await axios.get(baseUrl + userEndpoints.userProfile, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -46,8 +47,15 @@ const ProfilePage = () => {
       {user ? (
         <>
           <h1>Welcome, {user.name}!</h1>
+          <img src='${user.image}' alt='profile'/>
           <p>Email: {user.email}</p>
           <p>Phone: {user.phone}</p>
+          <p>ID Number: {user.idno}</p>
+          {user.isadmin==true?
+        <button>Admin</button>:
+        <h2>Not Admin</h2>
+      
+      }
           <button onClick={() => navigate('/edit-profile')}>Edit Profile</button>
           <button onClick={onLogout}>Logout</button>
           <button>Sacco</button>

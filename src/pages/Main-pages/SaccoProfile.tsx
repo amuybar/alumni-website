@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/SaccoProfile.css';
 import axios from 'axios';
 import { Transactions } from '../../types';
+import { baseUrl, loanEndpoints, userEndpoints } from '../../Services/apis_endpoin';
 
 const SaccoProfile = () => {
   const [transactions, setTransactions] = useState<Transactions[]>([]);
@@ -12,7 +13,7 @@ const SaccoProfile = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const response = await axios.get('/api/transactions');
+        const response = await axios.get(baseUrl + userEndpoints.updateUser,);
         setTransactions(response.data.transactions);
       } catch (error) {
         if (!error) {
@@ -33,7 +34,7 @@ const SaccoProfile = () => {
       return;
     }
     try {
-      const response = await axios.post('/api/apply-for-loan', { loanAmount });
+      const response = await axios.post(baseUrl + loanEndpoints.createLoan, { loanAmount });
       setSuccessMessage(response.data.message);
       setLoanAmount('');
     } catch (error) {

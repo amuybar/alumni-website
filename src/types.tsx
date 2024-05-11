@@ -1,10 +1,14 @@
-import { Key } from "react";
+import { Key, ReactNode } from "react";
 
 export interface User {
+  _id: User | null;
   id: string;
   name: string;
   email: string;
   phone:string;
+  idno:string;
+  image:String;
+  isadmin?:boolean;
 }
 
 export interface Event {
@@ -36,10 +40,20 @@ export interface Board{
 }
 
 export interface News{
-  id: number;
+  [x: string]: Key | null | undefined;
   heading: string;
   summary: string;
   content: string;
   date: string;
   image: string;
+}
+
+export interface Loan {
+  _id: string;
+  user: string;
+  id: number;
+  amount: number;
+  status: 'pending' | 'approved' | 'rejected'; 
+  userIdno: string;
+  date: string;
 }

@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import './styles/Register.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { baseUrl, userEndpoints } from '../../Services/apis_endpoin';
 
 
 const RegisterForm = () => {
-  const [username, setUsername] = useState('');
+  const [name, setName] = useState('');const [idno, setIdno] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
@@ -20,11 +21,13 @@ const navigate=useNavigate();
         throw new Error('Passwords do not match.');
       }
 
-      const response = await axios.post('http://localhost:3002/api/user/register', {
-        username,
+      const response = await axios.post(baseUrl + userEndpoints.signup, {
+        name,
+        idno,
         email,
         phone,
         password,
+
       });
 
       const token = response.data.token; // Get token from response
@@ -38,8 +41,11 @@ const navigate=useNavigate();
 
   };
 
-  const handleUsernameChange = (event:any) => {
-    setUsername(event.target.value);
+  const handleNameChange = (event:any) => {
+    setName(event.target.value);
+  };
+  const handleIDChange = (event:any) => {
+    setIdno(event.target.value);
   };
 
   const handleEmailChange = (event:any) => {
@@ -66,8 +72,15 @@ const navigate=useNavigate();
       <input
         type="text"
         name="username"
-        value={username}
-        onChange={handleUsernameChange}
+        value={name}
+        onChange={handleNameChange}
+        required
+      /> <label htmlFor="idno">ID no:</label>
+      <input
+        type="text"
+        name="idno"
+        value={idno}
+        onChange={handleIDChange}
         required
       />
 

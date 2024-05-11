@@ -3,6 +3,7 @@ import '../styles/EventSection.css';
 import { useNavigate } from 'react-router-dom';
 import { Event } from '../types';
 import axios from 'axios';
+import { baseUrl, eventEndpoints } from '../Services/apis_endpoin';
 
 
 
@@ -15,8 +16,7 @@ const EventSection = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await axios.get('http://localhost:3002/api/event');
-        // Assuming response.data is an array of events
+        const response = await axios.get(baseUrl+eventEndpoints.getAllEvents);
         if (response.data.length > 0) {
             const sortedEvents = response.data.sort(
                 (a: Event, b: Event) => new Date(b.date).getTime() - new Date(a.date).getTime()

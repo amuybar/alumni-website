@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Event } from '../../types';
+import { Event, User } from '../../types';
 import '../../styles/EventForm.css';
 import MDEditor from "@uiw/react-md-editor";
 import { useNavigate } from 'react-router-dom';
+import { baseUrl, eventEndpoints, userEndpoints } from '../../Services/apis_endpoin';
 
 const AddEventForm = () => {
   const [title, setTitle] = useState('');
@@ -13,6 +14,9 @@ const AddEventForm = () => {
   const [date, setDate] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Partial<Event>>({});
+
+ 
+
  const token = localStorage.getItem('token'); 
 
  
@@ -23,7 +27,7 @@ const AddEventForm = () => {
       setIsLoading(true);
      
       
-      await axios.post('http://localhost:3002/api/event', {
+      await axios.post(baseUrl + eventEndpoints.createEvent, {
         title,
         description,
         location,

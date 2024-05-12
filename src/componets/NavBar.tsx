@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { AiOutlineHome, AiOutlineUser, AiOutlineBell, AiOutlineCalendar, AiOutlineMessage } from 'react-icons/ai';
 import useFetchUserData from '../custom_hooks/useFetchHook';
@@ -10,6 +10,7 @@ const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { user } = useFetchUserData();
     const location = useLocation();
+    const navigate =useNavigate();
 
     const isAdmin = user && user.isadmin;
 
@@ -22,6 +23,12 @@ const NavBar = () => {
             setIsOpen(false);
         }
     };
+    const onLogout = () => {
+        localStorage.removeItem('token');
+        // refresh window
+        window.location.reload();
+        navigate('/login');
+      };
 
     return (
         <nav className="navbar">
@@ -39,10 +46,15 @@ const NavBar = () => {
                 <li><NavLink to="/opportunity" onClick={handleNavLinkClick}><AiOutlineBell /> Opportunity</NavLink></li>
                 <li><NavLink to="/news" onClick={handleNavLinkClick}><AiOutlineMessage /> News</NavLink></li>
                 <li><NavLink to="/events" onClick={handleNavLinkClick}><AiOutlineCalendar /> Events</NavLink></li>
+                
                 {isAdmin ? (
-                    <li><NavLink to="/manage-sacco" onClick={handleNavLinkClick}><AiOutlineCalendar /> Manage Sacco</NavLink></li>
+                    <><li><NavLink to="/manage-sacco" onClick={handleNavLinkClick}><AiOutlineCalendar /> Manage Sacco</NavLink></li>
+                    <li>
+                    <button onClick={onLogout}>Logout</button></li></>
+
                 ) : (
-                    null
+                    <li><NavLink to="/profile" onClick={handleNavLinkClick}><AiOutlineCalendar /> Profile</NavLink></li>
+                    
                 )}
             </ul>
         </nav>

@@ -25,10 +25,11 @@ export interface OpportunityType {
 }
 
 export interface Transactions{
+  type:string,
+  userId:User,
   amount:number,
-    date:string,
-    type:string,
-    user:string
+  description:string,
+  date:string
 
 }
 
@@ -57,3 +58,13 @@ export interface Loan {
   userIdno: string;
   date: string;
 }
+
+export interface Share {
+  _id: string;
+  name: string;
+  description: string;
+  totalQuantity: number;
+  currentPrice: number;
+
+}
+

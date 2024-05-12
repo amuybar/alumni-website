@@ -1,5 +1,3 @@
-// api_endpoints.ts
-
 export const baseUrl = 'https://alumni-backend-l27c.onrender.com';
 
 export const userEndpoints = {
@@ -11,7 +9,6 @@ export const userEndpoints = {
   demoteAdmin: '/api/user/demoteAdmin',
   resetPassword: '/api/user/reset',
   userProfile: '/api/user/profile'
-  
 };
 
 export const eventEndpoints = {
@@ -36,6 +33,11 @@ export const loanEndpoints = {
   createLoan: '/api/loan',
   updateLoan: (id: any) => `/api/loan/${id}`,
   deleteLoan: (id: any) => `/api/loan/${id}`,
+  applyLoan: '/api/loans', // New endpoint
+  approveLoan: (id: any) => `/api/loans/${id}/approve`, // New endpoint
+  payLoan: (id: any) => `/api/loans/${id}/pay`, // New endpoint
+  getAllAppliedLoans: '/api/loans/applied', // New endpoint
+  checkLoanEligibility: '/api/loans/check-eligibility', // New endpoint
 };
 
 export const newsEndpoints = {
@@ -45,3 +47,18 @@ export const newsEndpoints = {
   updateNews: (id: any) => `/api/news/${id}`,
   deleteNews: (id: any) => `/api/news/${id}`,
 };
+
+export const shareEndpoints = {
+  fetchShares: '/api/share',
+  fetchSharePrices: '/api/share-price', 
+  buyShare: '/api/share/buy', 
+  getSharesByUser:'/api/share/user'
+};
+
+export const transactionsEndpoints={
+  getAllTransactions: '/api/transaction',
+  getTransaction: (id: any) => `/api/transaction/${id}`,
+  createTransaction: '/api/transaction',
+  updateTransaction: (id: any) => `/api/transaction/${id}`,
+  deleteTransaction: (id: any) => `/api/transaction/${id}`,
+}

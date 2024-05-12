@@ -8,6 +8,7 @@ import { baseUrl, userEndpoints } from '../../Services/apis_endpoin';
 const ProfilePage = () => {
   const [activities, setActivities] = useState<any[]>([]);
   const [user, setUser] = useState<User | null>(null);
+  const [isLoaned,setIsLoaned]=useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,34 +47,58 @@ const ProfilePage = () => {
     <div className="profile-page">
       {user ? (
         <>
-          <h1>Welcome, {user.name}!</h1>
-          <img src='${user.image}' alt='profile'/>
+        {user.isadmin==true?
+        <h3>Admin</h3>:
+        <h3>User</h3>
+         }
+         
+          <div className='profile-pic'>
+            <h1>{user.name[0]}</h1>
+          </div>
+          <h1> {user.name}!</h1>
           <p>Email: {user.email}</p>
-          <p>Phone: {user.phone}</p>
-          <p>ID Number: {user.idno}</p>
-          {user.isadmin==true?
-        <button>Admin</button>:
-        <h2>Not Admin</h2>
-      
-      }
+          <div className='cta-s'>
           <button onClick={() => navigate('/edit-profile')}>Edit Profile</button>
           <button onClick={onLogout}>Logout</button>
-          <button>Sacco</button>
-          <button>Forums</button>
-          <h2>Activities</h2>
-          {/* <ul>
-            {activities.map((activity) => (
-              <li key={activity.id}>
-                <h3>{activity.title}</h3>
-                <p>{activity.description}</p>
-              </li>
-            ))}
-          </ul> */}
+          </div>
+          <div className='container'>
+          <div className='account-container'>
+          <p>Account Balance:{user.phone}</p>
+          <button >Deposit</button>
+          </div>
+          <div className='social-container'>
+          <p>Social Fund :{user.phone}</p>
+          <button >Deposit</button>
+          </div>
+          <div className='loan-container'>
+          <p>Loan Debt: {user.idno}</p>
+          {
+            isLoaned?(
+              <button>Pay Loan</button>
+            ):(
+              <button>Loan</button>
+            )
+          }
+          </div>
+          <div className='shares-container'>
+          <p>Total Shares :{user.phone}</p>
+          <button >Buy Shares</button>
+          </div>
+          
+          </div>
+          <div className='links-container'>
+            <h3>Links</h3>
+            <button onClick={() => navigate('/sacco')}>Sacco</button>
+          <button onClick={() => navigate('/event')}>Events</button>
+          </div>
+          
         </>
       ) : (
         <>
+          <div className='other-buttons'>
           <button onClick={() => navigate('/login')}>Login</button>
           <button onClick={() => navigate('/register')}>Register</button>
+          </div>
         </>
       )}
     </div>

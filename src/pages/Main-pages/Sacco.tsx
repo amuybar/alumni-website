@@ -35,11 +35,8 @@ const SaccoPage = () => {
             <h1>Sacco Page</h1>
             <p>Welcome to the Stamms Alumni Sacco page. Our goal is to provide financial support and resources to our alumni members. Our mission is to empower our alumni to achieve their financial goals and build a strong community.</p>
             </div>
-                {token ?
-                    <button onClick={() => history('/profile')}>Sacco Profile</button>
-                    :
-                    <button onClick={() => history('/login')}>Join Sacco</button>
-                }
+              
+                <button onClick={() => history('/shares')}>Buy Shares</button>
                 <button onClick={() => history('/sacco-profile')}>Loans</button>
                 <button onClick={() => history('/sacco-account')}>Account</button>
                 <button onClick={() => history('/board')}>Board Members</button>

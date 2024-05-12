@@ -1,46 +1,123 @@
 .profile-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #000;
   padding: 20px;
 }
 
 .profile-page h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
 }
 
 .profile-page p {
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
-.profile-page button {
-  background-color: #003366;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-.profile-page button:hover {
-  background-color: #002244;
-}
-
-.profile-page ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.profile-page li {
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.profile-page h2 {
-  font-size: 24px;
+.profile-pic h1 {
+  font-size: 46px;
+  color: #fff;
+}
+
+.cta-s {
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.account-container,
+.social-container,
+.loan-container,
+.shares-container {
+  width: 45%;
+  background-color: #007bff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.cta-s button,
+.account-container button,
+.social-container button,
+.loan-container button,
+.shares-container button {
+  background-color: #fff;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s;
+}
+
+.links-container {
+  margin-top: 20px;
+}
+
+.links-container h3 {
+  font-size: 20px;
   margin-bottom: 10px;
-  color: #333;
+}
+
+.links-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.other-buttons button{
+  background-color: #fff;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.3s;
+
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .account-container,
+  .social-container,
+  .loan-container,
+  .shares-container {
+    width: 90%;
+  }
 }

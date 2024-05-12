@@ -13,13 +13,13 @@ const ResetPassword = lazy(() => import('./pages/auth-Pages/ResetPassword'));
 const SaccoPage = lazy(() => import('./pages/Main-pages/Sacco'));
 const OppotunityPage = lazy(() => import('./pages/Main-pages/Oppotunity'));
 const ShareOpportunityForm = lazy(() => import('./componets/ShareOppotunityForm'));
-const JoinSacco = lazy(() => import('./pages/Main-pages/JoinSacco'));
 const SaccoProfile = lazy(() => import('./pages/Main-pages/SaccoProfile'));
 const SaccoFAQ = lazy(() => import('./pages/Main-pages/SaccoFAQ'));
 const BoardPage = lazy(() => import('./pages/Main-pages/Board')); 
 const NewsPage = lazy(() => import('./pages/Main-pages/NewsPage'));
 const ManageSaccoPage = lazy(() => import('./pages/Main-pages/ManageSacco'));
 const ManageLoans = lazy(() => import('./pages/Main-pages/ManageLoans'));
+const Shares = lazy(() => import('./pages/Main-pages/Shares'));
 
 
-export { Home, About, NotFound, EventsPage, AddEventForm, ProfilePage, LoginForm, RegisterPage, EditProfile,SaccoPage,OppotunityPage ,ShareOpportunityForm,JoinSacco,SaccoProfile,SaccoFAQ,BoardPage,NewsPage,ResetPassword,ManageSaccoPage,ManageLoans};
+export { Home, About, NotFound, EventsPage, AddEventForm, ProfilePage, LoginForm, RegisterPage, EditProfile,SaccoPage,OppotunityPage ,ShareOpportunityForm,Shares,SaccoProfile,SaccoFAQ,BoardPage,NewsPage,ResetPassword,ManageSaccoPage,ManageLoans};

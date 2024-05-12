@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Suspense } from 'react';
 import NavBar from './componets/NavBar';
 import Footer from './componets/Footer';
-import { Home, About, NotFound, EventsPage, AddEventForm, ProfilePage, LoginForm, RegisterPage, EditProfile,SaccoPage,OppotunityPage ,ShareOpportunityForm,JoinSacco,SaccoProfile,BoardPage,SaccoFAQ,NewsPage,ResetPassword,ManageSaccoPage,ManageLoans} from './routes';
+import { Home, About, NotFound, EventsPage, AddEventForm, ProfilePage, LoginForm, RegisterPage, EditProfile,SaccoPage,OppotunityPage ,ShareOpportunityForm,Shares,SaccoProfile,BoardPage,SaccoFAQ,NewsPage,ResetPassword,ManageSaccoPage,ManageLoans} from './routes';
 
 export default function App() {
   return (
@@ -21,9 +21,9 @@ export default function App() {
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/sacco" element={<SaccoPage />} />
+          <Route path="/shares" element={<Shares />} />
           <Route path="/opportunity" element={<OppotunityPage />} />
           <Route path="/share-opportunity" element={<ShareOpportunityForm />} />
-          <Route path="/join-sacco" element={<JoinSacco />} />
           <Route path="/sacco-profile" element={<SaccoProfile />} />
           <Route path="/board" element={<BoardPage />} />
           <Route path="/manage-sacco" element={<ManageSaccoPage />} />

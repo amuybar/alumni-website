@@ -4,7 +4,6 @@ import axios from 'axios';
 import { baseUrl, eventEndpoints } from '../Services/apis_endpoin';
 
 
-import 'react-big-calendar/lib/css/react-big-calendar.css';
 import '../styles/EventSection.css';
 import EventCard from '../custom_hooks/custom_eventcard';
 import { useNavigate } from 'react-router-dom';

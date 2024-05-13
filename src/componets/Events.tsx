@@ -1,63 +1,69 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/EventSection.css';
-import { useNavigate } from 'react-router-dom';
 import { Event } from '../types';
 import axios from 'axios';
 import { baseUrl, eventEndpoints } from '../Services/apis_endpoin';
 
 
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import '../styles/EventSection.css';
+import EventCard from '../custom_hooks/custom_eventcard';
+import { useNavigate } from 'react-router-dom';
 
 const EventSection = () => {
-  const [event, setEvent] = useState<Event | null>(null);
+  const [events, setEvents] = useState<Event[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const navigate=useNavigate();
 
+  const fetchEvents = async () => {
+    try {
+      const response = await (await axios.get(baseUrl + eventEndpoints.getAllEvents)).data.events;
+      setEvents(response);
+    } catch (error) {
+      setError(`${error}`)
+    } finally {
+      setIsLoading(false);
+    }
+  };
+  
+  
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await axios.get(baseUrl+eventEndpoints.getAllEvents);
-        if (response.data.length > 0) {
-            const sortedEvents = response.data.sort(
-                (a: Event, b: Event) => new Date(b.date).getTime() - new Date(a.date).getTime()
-              );
-          setEvent(sortedEvents[0]); // Set the latest event
-        } else {
-          setError('No events found.');
-        }
-      } catch (error) {
-        setError('An error occurred while fetching events.');
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     fetchEvents();
   }, []);
 
+  // Format date
+  const formatDate = (dateString: string): string => {
+    const dateObject = new Date(dateString);
+    const options: Intl.DateTimeFormatOptions = {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    };
+    return dateObject.toLocaleDateString('en-US', options);
+  };
+  
+
   return (
+    <div className='event'>
+    <h2>Events</h2>
     <div className="event-section">
       {isLoading && <p>Loading events...</p>}
       {error && <p className="error">{error}</p>}
-      {event && ( // Only render if event data is available
-        <div className="event">
-          <div className="event-date">
-            <div className="date-section">
-              <span className="month">{new Date(event.date).toLocaleString('default', { month: 'short' })}</span>
-              <span className="date">{new Date(event.date).getDate()}</span>
-              <span className="day">{new Date(event.date).toLocaleString('default', { weekday: 'short' })}</span>
-            </div>
-            <div className="line"></div>
-            <div className="title-location">
-              <h3 className="event-title">{event.title}</h3>
-              <p className="event-location">{event.location}</p>
-            </div>
-          </div>
-        </div>
-      )}
-      <button onClick={() => navigate('/events')} className="view-events-btn">
-        View All Events
-      </button>
+      <div className="event-section">
+
+        {events.length > 0 &&
+          events.map((event) => (
+            <EventCard
+              key={event.id}
+              title={event.title}
+              description={event.description}
+              date={formatDate(event.date)}
+              location={event.location} />
+          ))}
+        {error && <p className="error">{error}</p>}
+      </div>
+    </div>
+    <button onClick={()=>navigate('/events')}>View Events</button>
     </div>
   );
 };

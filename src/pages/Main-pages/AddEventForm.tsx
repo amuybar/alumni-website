@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Event, User } from '../../types';
 import '../../styles/EventForm.css';
-import MDEditor from "@uiw/react-md-editor";
 import { useNavigate } from 'react-router-dom';
-import { baseUrl, eventEndpoints, userEndpoints } from '../../Services/apis_endpoin';
+import { baseUrl, eventEndpoints } from '../../Services/apis_endpoin';
 
 const AddEventForm = () => {
   const [title, setTitle] = useState('');

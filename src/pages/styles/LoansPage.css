@@ -1,0 +1,117 @@
+/* LoansPage.css */
+.loans-profile {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.tab-switcher {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+}
+
+.tab-switcher li {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-bottom: none;
+}
+
+.tab-switcher li.active {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.tab-content {
+  margin-bottom: 20px;
+}
+
+.applyloan-tab,
+.payloan-tab {
+  margin-top: 20px;
+}
+
+.applyloan-tab input,
+.payloan-tab input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.applyloan-tab button,
+.payloan-tab button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.applyloan-tab button:hover,
+.payloan-tab button:hover {
+  background-color: #0056b3;
+}
+
+.error,
+.success {
+  margin-top: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.pending-loans,
+.approved-loans,
+.loan-transactions {
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  .tab-switcher {
+    flex-direction: column;
+  }
+
+  .tab-switcher li {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-right: none;
+    margin-bottom: -1px;
+  }
+
+  .tab-switcher li.active {
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+}

@@ -62,3 +62,10 @@ export const transactionsEndpoints={
   updateTransaction: (id: any) => `/api/transaction/${id}`,
   deleteTransaction: (id: any) => `/api/transaction/${id}`,
 }
+
+export const imageEndpoints={
+  getImage:(id:any)=>`/api/images/${id}`,
+  createImage:'/api/images',
+  deleteImage:(id:any)=>`/api/images/${id}`,
+  getImages:'/api/images'
+}

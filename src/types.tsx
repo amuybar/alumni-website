@@ -33,12 +33,7 @@ export interface Transactions{
 
 }
 
-export interface Board{
-  name:string;
-  position:string;
-  picture:string;
-  id:string;
-}
+
 
 export interface News{
   [x: string]: Key | null | undefined;

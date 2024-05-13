@@ -95,9 +95,14 @@ const ProfilePage = () => {
         </>
       ) : (
         <>
+        <div className='auth-Page'>
+          <h1>Welcome to Stamms Alumni Sacco</h1>
+          <p>Please login to continue</p>
+          
           <div className='other-buttons'>
           <button onClick={() => navigate('/login')}>Login</button>
           <button onClick={() => navigate('/register')}>Register</button>
+          </div>
           </div>
         </>
       )}

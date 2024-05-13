@@ -1,57 +1,103 @@
+/* BoardPage.css */
 .board-page {
-  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
   padding: 20px;
-  border-radius: 5px;
-  min-height: 100vh;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  min-height: 100px;
+  height: 100%;
+  width: 100%;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
 }
 
-.board-page h1 {
-  color: #007bff;
-  margin-bottom: 20px;
+h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 3, 0.867);
+  border-radius: 5px;
+}
+
+.tabs button:hover {
+  background-color: #0056b3;
+}
+
 
 .board-members {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .board-member {
-  width: 300px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  margin: 10px;
   padding: 20px;
-  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  transition: all 0.3s ease;
+  min-width: 250px;
+  max-width: 350px;
+  
 }
 
-.board-member img {
-  width: 100%;
+.Profile {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin-bottom: 10px;
+  background-color: #92daaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 40px;
 }
+
+
 
 .board-member h2 {
-  color: #007bff;
   margin-bottom: 10px;
-}
-
-.board-member p {
-  margin-bottom: 20px;
 }
 
 .board-member button {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  background-color: #007bff;
+  padding: 8px 16px;
+  background-color: #28a745;
   color: #fff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .board-member button:hover {
-  background-color: #0056b3;
+  background-color: #218838;
+}
+
+.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
 }

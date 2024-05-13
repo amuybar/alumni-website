@@ -38,7 +38,6 @@ const SaccoPage = () => {
               
                 <button onClick={() => history('/shares')}>Buy Shares</button>
                 <button onClick={() => history('/sacco-profile')}>Loans</button>
-                <button onClick={() => history('/sacco-account')}>Account</button>
                 <button onClick={() => history('/board')}>Board Members</button>
                 <button onClick={() => history('/faq-sacco')}>Sacco FAQ</button>
             </div>

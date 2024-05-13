@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Suspense } from 'react';
 import NavBar from './componets/NavBar';
 import Footer from './componets/Footer';
-import { Home, About, NotFound, EventsPage, AddEventForm, ProfilePage, LoginForm, RegisterPage, EditProfile,SaccoPage,OppotunityPage ,ShareOpportunityForm,Shares,SaccoProfile,BoardPage,SaccoFAQ,NewsPage,ResetPassword,ManageSaccoPage,ManageLoans} from './routes';
+import { Home, About, NotFound, EventsPage, AddEventForm, ProfilePage, LoginForm, RegisterPage, EditProfile,SaccoPage,GalleryPage ,Shares,LoansProfile,BoardPage,SaccoFAQ,NewsPage,ResetPassword,ManageSaccoPage,ManageLoans} from './routes';
 
 export default function App() {
   return (
@@ -22,9 +22,8 @@ export default function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/sacco" element={<SaccoPage />} />
           <Route path="/shares" element={<Shares />} />
-          <Route path="/opportunity" element={<OppotunityPage />} />
-          <Route path="/share-opportunity" element={<ShareOpportunityForm />} />
-          <Route path="/sacco-profile" element={<SaccoProfile />} />
+          <Route path="/opportunity" element={<GalleryPage />} />
+          <Route path="/sacco-profile" element={<LoansProfile />} />
           <Route path="/board" element={<BoardPage />} />
           <Route path="/manage-sacco" element={<ManageSaccoPage />} />
           <Route path="/manage-loans" element={<ManageLoans />} />

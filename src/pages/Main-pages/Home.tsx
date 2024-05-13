@@ -6,6 +6,7 @@ import NewsSection from '../../componets/News';
 import SaccoSection from '../../componets/Sacco';
 import SocialsSection from '../../componets/Socials';
 import NewsLetter from '../../componets/NewsLetter';
+import AlumniMerchandiseStore from '../../componets/Store';
 
 
 const Home=()=>{
@@ -16,6 +17,7 @@ const Home=()=>{
       <EventSection/>
       <NewsSection/>
       <SaccoSection/>
+      <AlumniMerchandiseStore/>
       <SocialsSection/>
       <NewsLetter/>
     </>
